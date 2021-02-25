@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-02-25T16:50:00.733Z</updated>
+    <updated>2021-02-25T16:51:21.033Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -16,7 +16,8 @@
         <link href="https://SerendipitysX.github.io/post/hello-world-im-ainsley-xiao/">
         </link>
         <updated>2021-02-25T15:37:12.000Z</updated>
-        <content type="html"><![CDATA[<center>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://SerendipitysX.github.io//post-images/1614271872546.jpg" alt="" loading="lazy"></figure>
+<center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,0.5);" 
     src="C:/Users/DELL/Documents/Gridea/post-images/1614269553980.jpg" width = "90%" alt=""/>
