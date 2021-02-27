@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-02-26T16:24:29.086Z</updated>
+    <updated>2021-02-27T09:14:37.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -10,6 +10,73 @@
     <logo>https://SerendipitysX.github.io/images/avatar.png</logo>
     <icon>https://SerendipitysX.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, XSS的备忘录</rights>
+    <entry>
+        <title type="html"><![CDATA[[算法]详解常见排序算法]]></title>
+        <id>https://SerendipitysX.github.io/post/suan-fa-xiang-jie-chang-jian-pai-xu-suan-fa/</id>
+        <link href="https://SerendipitysX.github.io/post/suan-fa-xiang-jie-chang-jian-pai-xu-suan-fa/">
+        </link>
+        <updated>2021-02-27T07:48:13.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="冒泡排序">冒泡排序</h1>
+<p>题设：有n个无序数字，需要按一定顺序排列。<br>
+时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span><br>
+<img src="https://media.giphy.com/media/cQIuA8Q77zFUm9NVwS/giphy.gif" alt="BubbleSort" loading="lazy"><br>
+Key:</p>
+<ol>
+<li>相邻两个数字比大小，无论结果如何，指针都要向后移</li>
+<li>每一趟都会往有序区（自然在末端啦）塞一个数字</li>
+<li>共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>趟</li>
+</ol>
+<pre><code>def Bubblesort(li):
+    for i in range(len(li)-1):
+        for j in range(len(li)-i-1):
+            if li[j] &gt; li[j+1]:
+                li[j],li[j+1] = li[j+1],li[j]
+    return li
+</code></pre>
+<p>但是考虑一种情况，如果这是一个有序或者部分有序的数列， 上述程序一视同仁的进行操作将会造成很多浪费，故设置标志位，如果某一糖没有发生交换，说明已经是有序数组了，可以直接输出。</p>
+<pre><code>def Bubblesort(li):
+    for i in range(len(li)-1):
+        exchange = False
+        for j in range(len(li)-i-1):
+            if li[j] &gt; li[j+1]:
+                li[j],li[j+1] = li[j+1],li[j]
+                exchange = True
+        if exchange == True: ##if not exchange:
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="冒泡排序">冒泡排序</h1>
+<p>题设：有n个无序数字，需要按一定顺序排列。<br>
+时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span><br>
+<img src="https://media.giphy.com/media/cQIuA8Q77zFUm9NVwS/giphy.gif" alt="BubbleSort" loading="lazy"><br>
+Key:</p>
+<ol>
+<li>相邻两个数字比大小，无论结果如何，指针都要向后移</li>
+<li>每一趟都会往有序区（自然在末端啦）塞一个数字</li>
+<li>共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>趟</li>
+</ol>
+<pre><code>def Bubblesort(li):
+    for i in range(len(li)-1):
+        for j in range(len(li)-i-1):
+            if li[j] &gt; li[j+1]:
+                li[j],li[j+1] = li[j+1],li[j]
+    return li
+</code></pre>
+<p>但是考虑一种情况，如果这是一个有序或者部分有序的数列， 上述程序一视同仁的进行操作将会造成很多浪费，故设置标志位，如果某一糖没有发生交换，说明已经是有序数组了，可以直接输出。</p>
+<pre><code>def Bubblesort(li):
+    for i in range(len(li)-1):
+        exchange = False
+        for j in range(len(li)-i-1):
+            if li[j] &gt; li[j+1]:
+                li[j],li[j+1] = li[j+1],li[j]
+                exchange = True
+        if exchange == True: ##if not exchange:
+&lt;!-- more --&gt;
+
+            return li
+    return li
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello World! I'm Ainsley Xiao!]]></title>
         <id>https://SerendipitysX.github.io/post/hello-world-im-ainsley-xiao/</id>
@@ -39,7 +106,7 @@
 <p>把链接贴在下边，这么便捷，你不学学看吗~</p>
 <p><a href="https://www.bilibili.com/video/BV1YJ411a7dy">狂神说CSS3</a>  <a href="https://www.bilibili.com/video/BV1x4411V75C">狂神说HTML</a></p>
 <hr>
-<p>既然已经来到了大三这个节点！再加上十分钟前竟然收到了某邮件，本咸鱼确实振奋，决定伸个懒腰顺便翻身晒个太阳o(´^｀)o<br>
+<p>既然已经来到了大三这个节点！想到夏天要到了，本咸鱼确实振奋，决定伸个懒腰顺便翻身晒个太阳o(´^｀)o<br>
 下列任务按从重到轻的顺序排列，学习资源也附上备忘：<br>
 🚀某杯比赛（ACwing的算法基础课 &amp; B站的算法教程）<br>
 ✈️大创项目（发现的网站 &amp; 老师给的书）<br>
