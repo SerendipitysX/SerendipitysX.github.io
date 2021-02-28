@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-02-28T04:11:19.225Z</updated>
+    <updated>2021-02-28T11:40:01.285Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://SerendipitysX.github.io/post/suan-fa-xiang-jie-chang-jian-pai-xu-suan-fa/">
         </link>
         <updated>2021-02-27T07:48:13.000Z</updated>
-        <content type="html"><![CDATA[<p>题设：有n个无序数字，需要按一定顺序排列。</p>
-<h1 id="慢速排序三人组冒泡选择插入">慢速排序三人组（冒泡/选择/插入）</h1>
-<h2 id="1冒泡排序"><strong>1.冒泡排序</strong></h2>
+        <content type="html"><![CDATA[<p><strong>题设：有n个无序数字，需要按一定顺序排列。</strong></p>
+<h1 id="基础排序三人组冒泡选择插入">🐣基础排序三人组（冒泡/选择/插入）</h1>
+<h2 id="一冒泡排序">（一）冒泡排序</h2>
 <p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
 <img src="https://media.giphy.com/media/cQIuA8Q77zFUm9NVwS/giphy.gif" alt="BubbleSort" loading="lazy"><br>
 Key:</p>
@@ -46,7 +46,7 @@ Key:</p>
             return li
     return li
 </code></pre>
-<h2 id="2选择排序"><strong>2.选择排序</strong></h2>
+<h2 id="二选择排序">（二）选择排序</h2>
 <p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
 与冒泡排序类似，也可以分为有序区和无序区。 在从小到大排序的情况下，每一趟选最小的出来，放在队首的有序区里。<br>
 <img src="https://SerendipitysX.github.io//post-images/1614418070886.gif" alt="" loading="lazy"><br>
@@ -64,7 +64,7 @@ key：</p>
         li[i], li[min_loc] = li[min_loc],li[i]
     return li
 </code></pre>
-<h2 id="3插入排序"><strong>3.插入排序</strong></h2>
+<h2 id="三插入排序">（三）插入排序</h2>
 <p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
 就像是打斗地主摸牌，把新来的一张牌插到当前有序排列的合适位置。<br>
 无序区的第一个与前面的有序区比较大小，从有序区的末尾朝前遍历，在合适的位置插入。<br>
@@ -88,6 +88,77 @@ key：</p>
             li[max_loc], temp = temp, li[max_loc]
         print(li)
     return li
+</code></pre>
+<hr>
+<h1 id="进阶排序三人组快速堆">🐥进阶排序三人组（快速/堆）</h1>
+<h2 id="一快速排序">（一）快速排序</h2>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>
+选一个基准点，左边的全比他小，右边的全比他大。然后对左边右边分别进行递归排序，方法同上。<br>
+🎯[注]此图是version1代码的图<br>
+<img src="https://SerendipitysX.github.io//post-images/1614511049223.gif" alt="" loading="lazy"><br>
+key:</p>
+<ol>
+<li>递归</li>
+<li>注意边界情况（如给定序列本身有序，可能复杂度就变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>了）<br>
+<strong>Version 1</strong> 推荐指数：⭐️⭐️⭐️</li>
+</ol>
+<pre><code>def partition(array, low, high):
+    # 设最后一个数是pivot
+    pivot = array[high]
+    i = low - 1
+    #采取的分区策略是队首放less than pivot（我们叫她less区），具体实操嘛，
+    #就是先设置一个锚点作为less区的起点，一遇到比pivot小的数
+    #就往less区装，即把站着坑位的greater数与less数交换一下。
+    for j in range(low, high):
+        if array[j] &lt;= pivot:
+            i = i + 1
+            (array[i], array[j]) = (array[j], array[i])
+
+    (array[i + 1], array[high]) = (array[high], array[i + 1])
+
+    return i + 1
+
+def quickSort(array, low, high):
+    if low &lt; high:
+        # Select pivot position and put all the elements smaller 
+        # than pivot on left and greater than pivot on right
+        pi = partition(array, low, high)
+
+        # Sort the elements on the left of pivot
+        quickSort(array, low, pi - 1)
+
+        # Sort the elements on the right of pivot
+        quickSort(array, pi + 1, high)
+</code></pre>
+<p><strong>Version 2</strong> 推荐指数：⭐️⭐️⭐️⭐️</p>
+<pre><code>def partition(li,left,right):
+    tmp = li[left]
+    while left &lt; right:
+        while left&lt;right and li[right]&gt;=tmp: 
+            #必须先从右边开始
+            #因为这里把左边第一个当成 pivot，空了出来
+            #left&lt;right不可少，不然内部就会陷入死循环[-1]
+            right-=1
+        li[right] = li[left]
+        while left&lt;right and li[left]&lt;=tmp:
+            left+=1
+        li[left] = li[right]
+    li[left] = tmp
+    return left
+
+def quicksort(li,left,right):
+    if left &lt; right: #还没重合
+        mid = partition(li,left,right)
+        quicksort(left,mid-1)
+        quicksort(mid+1,right)
+</code></pre>
+<p><strong>Version 3</strong> 推荐指数：⭐️⭐️⭐️⭐️⭐️</p>
+<pre><code>def quicksort(li):
+    pivot = len(li) // 2
+    left =[x for x in li if x &lt; privot]
+    mid =[x for x in li if x == privot]
+    right =[x for x in li if x&gt; privot]
+    return quicksort(left) + mid + quicksort(right)
 </code></pre>
 ]]></content>
     </entry>
