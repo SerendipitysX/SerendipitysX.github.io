@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-02-28T11:58:28.926Z</updated>
+    <updated>2021-03-02T11:40:42.043Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -159,6 +159,47 @@ def quicksort(li,left,right):
     mid =[x for x in li if x == privot]
     right =[x for x in li if x&gt; privot]
     return quicksort(left) + mid + quicksort(right)
+</code></pre>
+<h2 id="二堆排序">（二）堆排序</h2>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>
+在介绍堆排序之前，咱们来回顾一下二叉树的基本知识</p>
+<ol>
+<li>完全二叉树：通俗一点，就是从左到右依次排的，不能插队，最后一层可以有空<br>
+<img src="https://SerendipitysX.github.io//post-images/1614513659226.png" alt="" loading="lazy"></li>
+<li>小根/大根：如图所示<br>
+<img src="https://SerendipitysX.github.io//post-images/1614513696728.png" alt="" loading="lazy"><br>
+以大根树为例，我们可以看出来，根节点是整棵树最大的</li>
+</ol>
+<pre><code>def sift(data, low, high):
+    '''
+    目的就是让这棵树的根节点是整棵树最大的。
+    :param data: tree
+    :param low: 堆的最高点（root）
+    :param high: 堆的最后一个，用来判定是否出界
+    :return:
+    '''
+    i = low # i指向根节点
+    j = 2 * i + 1 #子节点，这里是左儿子
+    tmp = data[low]
+    while j &lt;= high:#建立大堆
+        if j+1&lt;high and data[j]&lt;data[j+1]:
+            j = j+1 #比较叶子节点大小
+        if data[j]&gt;tmp:
+            data[j] = data[i]
+            i = j
+            j = 2 * i + 1
+        else:
+            break
+    else:
+        data[i] = tmp
+
+def heapSort(data):
+    n = len(data)
+    for i in range(n//2, -1, -1):
+        sift(data,  low=i, high=n-1) #step1:建立max heap(顺序是从最后的树往前，才能保证多层树符合条件) ------就是让每个根节点都是它所在那棵树的老大！！！！！！
+    for i in range(n-1, -1, -1):
+        data[0], data[i] = data[i], data[0] #step2:把根节点(最大)与最后的叶子结点交换-----老大被选出来啦，看下条代码已经不把他算进去啦
+        sift(data, low=0, high=i-1) #再次建立最大树
 </code></pre>
 ]]></content>
     </entry>
