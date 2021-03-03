@@ -79,7 +79,7 @@ Key:
           <img src="https://SerendipitysX.github.io//post-images/suan-fa-xiang-jie-chang-jian-pai-xu-suan-fa.jpg" alt="[算法]详解常见排序算法" class="block w-full mb-8">
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2021-02-27 · 7 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2021-02-27 · 11 min read</div>
           
             <a href="https://SerendipitysX.github.io/tag/gBBigNAH7/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
               <i class="ri-hashtag"></i>
@@ -259,12 +259,11 @@ def quicksort(li,left,right):
         if j+1&lt;high and data[j]&lt;data[j+1]:
             j = j+1 #比较叶子节点大小
         if data[j]&gt;tmp:
-            data[j] = data[i]
+            data[i] = data[j]
             i = j
             j = 2 * i + 1
         else:
             break
-    else:
         data[i] = tmp
 
 def heapSort(data):
@@ -274,6 +273,97 @@ def heapSort(data):
     for i in range(n-1, -1, -1):
         data[0], data[i] = data[i], data[0] #step2:把根节点(最大)与最后的叶子结点交换-----老大被选出来啦，看下条代码已经不把他算进去啦
         sift(data, low=0, high=i-1) #再次建立最大树
+</code></pre>
+<p>当然如果我们用Python的内置模块<strong>heapq</strong></p>
+<pre><code>import heapq
+heapq.heapify(data) #建立堆
+n = len(data)
+for i in range(n):
+    print(heapq.heappop(data),end=',')
+</code></pre>
+<p><strong>上一个栗子！</strong><br>
+topK问题，取前k个最大的值</p>
+<ol>
+<li>堆排序后切片 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></li>
+<li>基础排序（每趟选最大） <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(kn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></li>
+<li>切片后堆排序 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>k</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(k))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> 🙂</li>
+</ol>
+<pre><code>def sift(data, low, high):
+    #function:不是建立小根树！而是让根节点是该树最小
+    i = low
+    j = 2*i + 1
+    tmp = data[low]
+    while j &lt;= high:
+        if j+1 &lt;= high and data[j+1] &lt; data[j]:
+            j = j+1
+        if data[j] &lt; tmp:
+            data[i] = data[j]
+            i = j
+            j = 2*i + 1
+        else:
+            break
+        data[i] = tmp
+
+def heapSortk(data, k):
+    heap = data[:k]
+    for i in range((k-2)//2, -1, -1):
+        sift(heap,i,k-1)  #建立节点数量为k的小根树
+
+    for i in range(k,len(data)): #保证是前k大的树组成的堆
+        if data[i] &gt; heap[0]:
+            heap[0], data[i] = data[i], heap[0]
+            sift(heap,0,k-1)
+
+    for i in range(k-1, -1, -1):#保证前k个数有序弹出
+        heap[0], heap[i] = heap[i], heap[0]
+        sift(heap, 0, i-1)
+    print(heap)
+</code></pre>
+<h2 id="三归并排序">（三）归并排序</h2>
+<h1 id="拓展排序">拓展排序</h1>
+<h2 id="一希尔排序插入排序的亲戚">（一）希尔排序（插入排序的亲戚）</h2>
+<h2 id="二桶排序">（二）桶排序</h2>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span><br>
+计数排序的改进版，就是说这些乱序的数字都落在某个范围里，且这个范围还特别大，比如1-10000。按照计数排序老路子，就要费很多事。于是我们引入桶的概念，把范围划分成几个小范围。并且在将对应数字放进桶的时候，桶的内部就排序啦！</p>
+<pre><code>def bucketsort(li, n=10, max_num=10000):
+    buckets = [[] for _ in range(n)] # 0:0-99 1:100-199
+    for val in li: #798 应该放到7里面
+        i = min(val // (max_num // n),n-1) #i指的是哪个桶 min在这里相当巧妙
+        buckets[i].append(val)
+        #但是我们希望他放进来的时候就有序
+        loc = len(buckets[i]) - 1
+        for j in range(len(buckets[i])-1, -1, -1):
+            if buckets[i][j] &gt; val:
+                loc = j #loc 完成所有循环后是我们该把val存放的位置
+        if loc != len(buckets[i]) -1:
+            for q in range(len(buckets[i])-2, loc-1, -1):
+                buckets[i][q+1] = buckets[i][q]
+            buckets[i][loc] = val
+    sortedli = []
+    for buck in buckets:
+        sortedli.extend(buck)
+    return sortedli
+import random
+li = list(range(10000))
+random.shuffle(li)
+r = bucketsort(li)
+print(r)
+</code></pre>
+<h2 id="三基数排序">（三）基数排序</h2>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span><br>
+类似桶排序，但是个位，十位，百位等等依次进行桶排序。其实说她是桶排序也不太恰当，因为他本身并没有在桶里在进行一个排序，而是通过个十百位的依次排序达到最终的有序。</p>
+<pre><code>def radix_sort(li):
+    max_num = max(li)
+    it = 0
+    while 10**it &lt;=max_num:
+        buckets =[[] for _ in range(10)]
+        for var in li:
+            digit = (var//10**it)%10
+            buckets[digit].append(var)
+        li.clear() #列表清空
+        for buc in buckets:
+            li.extend(buc) #不能用append
+        it += 1
 </code></pre>
 
         </div>
@@ -327,6 +417,14 @@ def heapSort(data):
 <ul>
 <li><a href="#%E4%B8%80%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F">（一）快速排序</a></li>
 <li><a href="#%E4%BA%8C%E5%A0%86%E6%8E%92%E5%BA%8F">（二）堆排序</a></li>
+<li><a href="#%E4%B8%89%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">（三）归并排序</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8B%93%E5%B1%95%E6%8E%92%E5%BA%8F">拓展排序</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%9A%84%E4%BA%B2%E6%88%9A">（一）希尔排序（插入排序的亲戚）</a></li>
+<li><a href="#%E4%BA%8C%E6%A1%B6%E6%8E%92%E5%BA%8F">（二）桶排序</a></li>
+<li><a href="#%E4%B8%89%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F">（三）基数排序</a></li>
 </ul>
 </li>
 </ul>
