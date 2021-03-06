@@ -4,37 +4,37 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>python中的字典用法 - XSS的备忘录</title>
+<title>Pytorch之这个API怎么用 - XSS的备忘录</title>
 <link rel="shortcut icon" href="https://SerendipitysX.github.io//favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="https://SerendipitysX.github.io//media/css/tailwind.css">
 <link rel="stylesheet" href="https://SerendipitysX.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="python中的字典用法 - XSS的备忘录 - Atom Feed" href="https://SerendipitysX.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Pytorch之这个API怎么用 - XSS的备忘录 - Atom Feed" href="https://SerendipitysX.github.io//atom.xml">
 
     
 
-  <meta name="description" content="collection.Counter可以用来计数
-继承了字典，也可以用字典的东西啦，例如item
-
-在[Leecode：anagram](https://leetcode-cn.com/problems/valid-anagram/solu..." />
-  <meta property="og:title" content="python中的字典用法 - XSS的备忘录">
-  <meta property="og:description" content="collection.Counter可以用来计数
-继承了字典，也可以用字典的东西啦，例如item
-
-在[Leecode：anagram](https://leetcode-cn.com/problems/valid-anagram/solu..." />
+  <meta name="description" content="手动实现卷积中的滑动窗口操作
+俗称---只有卷，没有积，代表人物---nn.functional.unfold()
+这篇博客讲的很清楚！
+..." />
+  <meta property="og:title" content="Pytorch之这个API怎么用 - XSS的备忘录">
+  <meta property="og:description" content="手动实现卷积中的滑动窗口操作
+俗称---只有卷，没有积，代表人物---nn.functional.unfold()
+这篇博客讲的很清楚！
+..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://SerendipitysX.github.io/post/python-zhong-de-zi-dian-yong-fa/" />
+  <meta property="og:url" content="https://SerendipitysX.github.io/post/pytorch-zhi-zhe-ge-api-zen-me-yong/" />
   <meta property="og:image" content="https://SerendipitysX.github.io//images/avatar.png">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="python中的字典用法 - XSS的备忘录">
-  <meta name="twitter:description" content="collection.Counter可以用来计数
-继承了字典，也可以用字典的东西啦，例如item
-
-在[Leecode：anagram](https://leetcode-cn.com/problems/valid-anagram/solu...">
+  <meta name="twitter:title" content="Pytorch之这个API怎么用 - XSS的备忘录">
+  <meta name="twitter:description" content="手动实现卷积中的滑动窗口操作
+俗称---只有卷，没有积，代表人物---nn.functional.unfold()
+这篇博客讲的很清楚！
+...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://SerendipitysX.github.io/post/python-zhong-de-zi-dian-yong-fa/">
+  <link rel="canonical" href="https://SerendipitysX.github.io/post/pytorch-zhi-zhe-ge-api-zen-me-yong/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
@@ -52,20 +52,17 @@
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          python中的字典用法
+          Pytorch之这个API怎么用
         </h1>
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2021-03-03 · 1 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2021-03-06 · 1 min read</div>
           
         </div>
         <div class="markdown mb-8" v-pre>
-          <h2 id="collectioncounter可以用来计数">collection.Counter可以用来计数</h2>
-<p>继承了字典，也可以用字典的东西啦，例如item<br>
-<img src="https://SerendipitysX.github.io//post-images/1614785032605.png" alt="" loading="lazy"><br>
-在[Leecode：anagram](https://leetcode-cn.com/problems/valid-anagram/solution/yi-xing-dai-ma-xing-neng-gao-xiao-da-dao-100-by-ja/）中也可以快速做出这道题。当然他写的太简单，如果不调API，我们也可以用字典写出来。</p>
-<h2 id="dictgetkeydefaultnone-查找key的值如果没有就返回后面那个">dict.get(key,default=None) 查找key的值，如果没有就返回后面那个</h2>
-<p><a href="https://www.runoob.com/python/att-dictionary-get.html">栗子！</a></p>
+          <h2 id="手动实现卷积中的滑动窗口操作">手动实现卷积中的滑动窗口操作</h2>
+<p>俗称---<strong>只有卷，没有积</strong>，代表人物---<strong>nn.functional.unfold()</strong><br>
+<a href="https://blog.csdn.net/qq_40714949/article/details/112836897?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=1328603.28013.16150220395239037&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">这篇博客讲的很清楚！</a></p>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
@@ -109,8 +106,7 @@
         <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#collectioncounter%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E8%AE%A1%E6%95%B0">collection.Counter可以用来计数</a></li>
-<li><a href="#dictgetkeydefaultnone-%E6%9F%A5%E6%89%BEkey%E7%9A%84%E5%80%BC%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%B0%B1%E8%BF%94%E5%9B%9E%E5%90%8E%E9%9D%A2%E9%82%A3%E4%B8%AA">dict.get(key,default=None) 查找key的值，如果没有就返回后面那个</a></li>
+<li><a href="#%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0%E5%8D%B7%E7%A7%AF%E4%B8%AD%E7%9A%84%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%93%8D%E4%BD%9C">手动实现卷积中的滑动窗口操作</a></li>
 </ul>
 </li>
 </ul>

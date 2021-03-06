@@ -1,22 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://SerendipitysX.github.io/</id>
-    <title>XSS的备忘录</title>
-    <updated>2021-03-06T16:33:36.062Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://SerendipitysX.github.io/"/>
-    <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://SerendipitysX.github.io/images/avatar.png</logo>
-    <icon>https://SerendipitysX.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, XSS的备忘录</rights>
-    <entry>
-        <title type="html"><![CDATA[[机器学习CS229]线性回归和梯度下降]]></title>
-        <id>https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang/</id>
-        <link href="https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang/">
-        </link>
-        <updated>2021-03-06T14:38:28.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="线性回归">线性回归</h1>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>[机器学习CS229]线性回归和梯度下降 - XSS的备忘录</title>
+<link rel="shortcut icon" href="https://SerendipitysX.github.io//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://SerendipitysX.github.io//media/css/tailwind.css">
+<link rel="stylesheet" href="https://SerendipitysX.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="[机器学习CS229]线性回归和梯度下降 - XSS的备忘录 - Atom Feed" href="https://SerendipitysX.github.io//atom.xml">
+
+    
+
+  <meta name="description" content="线性回归
+一个平平无奇没有脾气（没有局部最优解）的小可爱。可以大大方方用随机梯度下降惹😋
+这里的loss function我们选的是LMS:
+J(θ)=12∑i=1m(hθ(x(i))−y(i))2J(\theta) = \frac 12..." />
+  <meta property="og:title" content="[机器学习CS229]线性回归和梯度下降 - XSS的备忘录">
+  <meta property="og:description" content="线性回归
+一个平平无奇没有脾气（没有局部最优解）的小可爱。可以大大方方用随机梯度下降惹😋
+这里的loss function我们选的是LMS:
+J(θ)=12∑i=1m(hθ(x(i))−y(i))2J(\theta) = \frac 12..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang/" />
+  <meta property="og:image" content="https://SerendipitysX.github.io//post-images/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="[机器学习CS229]线性回归和梯度下降 - XSS的备忘录">
+  <meta name="twitter:description" content="线性回归
+一个平平无奇没有脾气（没有局部最优解）的小可爱。可以大大方方用随机梯度下降惹😋
+这里的loss function我们选的是LMS:
+J(θ)=12∑i=1m(hθ(x(i))−y(i))2J(\theta) = \frac 12...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://SerendipitysX.github.io/" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      XSS的备忘录
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          [机器学习CS229]线性回归和梯度下降
+        </h1>
+        
+          <img src="https://SerendipitysX.github.io//post-images/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang.jpg" alt="[机器学习CS229]线性回归和梯度下降" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2021-03-06 · 4 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h1 id="线性回归">线性回归</h1>
 <p>一个平平无奇没有脾气（没有局部最优解）的小可爱。可以大大方方用随机梯度下降惹😋<br>
 这里的loss function我们选的是LMS:</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>(</mo><mi>θ</mi><mo>)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mo>(</mo><msub><mi>h</mi><mi>θ</mi></msub><mo>(</mo><msup><mi>x</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msup><mo>)</mo><mo>−</mo><msup><mi>y</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msup><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">J(\theta) = \frac 12 \sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})^2
@@ -77,381 +123,213 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.757772em;vertical-align:-3.6288860000000005em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.128886em;"><span style="top:-6.333686em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"></span></span><span style="top:-4.833685999999998em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"></span></span><span style="top:-3.1288859999999987em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"></span></span><span style="top:-1.5759139999999991em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"></span></span><span style="top:-0.07591399999999959em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.6288860000000005em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.128886em;"><span style="top:-6.333686em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:2em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">p</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord cjk_fallback">：</span><span class="mopen">{</span></span></span><span style="top:-4.833685999999998em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:2em;"></span><span class="mord mathdefault">i</span><span class="mord cjk_fallback">从</span><span class="mord">1</span><span class="mord cjk_fallback">到</span><span class="mord mathdefault">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">{</span></span></span><span style="top:-3.1288859999999987em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:2em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.4231360000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.412972em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:2em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">每</span><span class="mord cjk_fallback">个</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span><span style="top:-1.5759139999999991em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:2em;"></span><span class="mclose">}</span></span></span><span style="top:-0.07591399999999959em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:2em;"></span><span class="mclose">}</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.6288860000000005em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 <h2 id="3-mini-batch-gradient-descent️️️️️">3. Mini-batch Gradient Descent⭐️⭐️⭐️⭐️⭐️</h2>
 <p>前两种方法的折中。有点体会......推荐！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pytorch之这个API怎么用]]></title>
-        <id>https://SerendipitysX.github.io/post/pytorch-zhi-zhe-ge-api-zen-me-yong/</id>
-        <link href="https://SerendipitysX.github.io/post/pytorch-zhi-zhe-ge-api-zen-me-yong/">
-        </link>
-        <updated>2021-03-06T09:22:38.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="手动实现卷积中的滑动窗口操作">手动实现卷积中的滑动窗口操作</h2>
-<p>俗称---<strong>只有卷，没有积</strong>，代表人物---<strong>nn.functional.unfold()</strong><br>
-<a href="https://blog.csdn.net/qq_40714949/article/details/112836897?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=1328603.28013.16150220395239037&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">这篇博客讲的很清楚！</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[python中的字典用法]]></title>
-        <id>https://SerendipitysX.github.io/post/python-zhong-de-zi-dian-yong-fa/</id>
-        <link href="https://SerendipitysX.github.io/post/python-zhong-de-zi-dian-yong-fa/">
-        </link>
-        <updated>2021-03-03T15:18:06.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="collectioncounter可以用来计数">collection.Counter可以用来计数</h2>
-<p>继承了字典，也可以用字典的东西啦，例如item<br>
-<img src="https://SerendipitysX.github.io//post-images/1614785032605.png" alt="" loading="lazy"><br>
-在[Leecode：anagram](https://leetcode-cn.com/problems/valid-anagram/solution/yi-xing-dai-ma-xing-neng-gao-xiao-da-dao-100-by-ja/）中也可以快速做出这道题。当然他写的太简单，如果不调API，我们也可以用字典写出来。</p>
-<h2 id="dictgetkeydefaultnone-查找key的值如果没有就返回后面那个">dict.get(key,default=None) 查找key的值，如果没有就返回后面那个</h2>
-<p><a href="https://www.runoob.com/python/att-dictionary-get.html">栗子！</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[处理数据基本操作汇总]]></title>
-        <id>https://SerendipitysX.github.io/post/chu-li-shu-ju-ji-ben-cao-zuo-hui-zong/</id>
-        <link href="https://SerendipitysX.github.io/post/chu-li-shu-ju-ji-ben-cao-zuo-hui-zong/">
-        </link>
-        <updated>2021-03-03T13:40:45.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="csv家族">CSV家族</h1>
-<ol>
-<li><strong>读取csv第一行 标签之类的</strong></li>
-</ol>
-<pre><code>col_list = next(csv.reader(open(wine_path), delimiter=';'))
-</code></pre>
-<ol start="2">
-<li><strong>将csv从第二行起的数据读成numpy</strong></li>
-</ol>
-<pre><code>wineq_numpy = np.loadtxt(wine_path, dtype=np.float32, delimiter=&quot;;&quot;,
-                         skiprows=1)#读取文件的时候跳过第一行
-</code></pre>
-<h1 id="独热码">独热码！</h1>
-<ol>
-<li><a href="https://blog.csdn.net/qq_34914551/article/details/88700334?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">torch.scatter_()</a></li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[算法]详解常见排序算法]]></title>
-        <id>https://SerendipitysX.github.io/post/suan-fa-xiang-jie-chang-jian-pai-xu-suan-fa/</id>
-        <link href="https://SerendipitysX.github.io/post/suan-fa-xiang-jie-chang-jian-pai-xu-suan-fa/">
-        </link>
-        <updated>2021-02-27T07:48:13.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>题设：有n个无序数字，需要按一定顺序排列。</p>
-</blockquote>
-<h1 id="基础排序三人组冒泡选择插入">🐣基础排序三人组（冒泡/选择/插入）</h1>
-<h2 id="一冒泡排序">（一）冒泡排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
-<img src="https://media.giphy.com/media/cQIuA8Q77zFUm9NVwS/giphy.gif" alt="BubbleSort" loading="lazy"><br>
-Key:</p>
-<ol>
-<li>相邻两个数字比大小，无论结果如何，指针都要向后移</li>
-<li>每一趟都会往有序区（自然在末端啦）塞一个数字</li>
-<li>共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>趟</li>
-</ol>
-<pre><code>def Bubblesort(li):
-    for i in range(len(li)-1):
-        for j in range(len(li)-i-1):
-            if li[j] &gt; li[j+1]:
-                li[j],li[j+1] = li[j+1],li[j]
-    return li
-</code></pre>
-<p>但是考虑一种情况，如果这是一个有序或者部分有序的数列， 上述程序一视同仁的进行操作将会造成很多浪费，故设置标志位，如果某一糖没有发生交换，说明已经是有序数组了，可以直接输出。</p>
-<pre><code>def Bubblesort(li):
-    for i in range(len(li)-1):
-        exchange = False
-        for j in range(len(li)-i-1):
-            if li[j] &gt; li[j+1]:
-                li[j],li[j+1] = li[j+1],li[j]
-                exchange = True
-        if exchange == True: ##if not exchange:
-            return li
-    return li
-</code></pre>
-<h2 id="二选择排序">（二）选择排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
-与冒泡排序类似，也可以分为有序区和无序区。 在从小到大排序的情况下，每一趟选最小的出来，放在队首的有序区里。<br>
-<img src="https://SerendipitysX.github.io//post-images/1614418070886.gif" alt="" loading="lazy"><br>
-key：</p>
-<ol>
-<li>有序区/无序区</li>
-<li>记录的是最小数的<strong>位置</strong></li>
-</ol>
-<pre><code>def selectsort(li):
-    for i in range(len(li)-1):
-        min_loc = i
-        for j in range(i+1,len(li)): #不用再跟自己比 所以是i+1
-            if li[min_loc] &gt; li[j]:
-                min_loc = j
-        li[i], li[min_loc] = li[min_loc],li[i]
-    return li
-</code></pre>
-<h2 id="三插入排序">（三）插入排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
-就像是打斗地主摸牌，把新来的一张牌插到当前有序排列的合适位置。<br>
-无序区的第一个与前面的有序区比较大小，从有序区的末尾朝前遍历，在合适的位置插入。<br>
-<img src="https://SerendipitysX.github.io//post-images/1614484365618.gif" alt="" loading="lazy"><br>
-key：</p>
-<ol>
-<li>有序区/无序区</li>
-<li>记录的是合适的<strong>位置</strong>（所谓合适，就是找到有序区从左往右第一个比他大的数）</li>
-<li>有序区朝后移动时小心覆盖</li>
-</ol>
-<pre><code>def insertsort(li):
-    for i in range(1,len(li)): # 无序区的第一个到最后一个
-        max_loc = i 
-        for j in range(i-1,-1,-1): # 有序区从最后一个到第一个
-            temp = li[i] # 无序区的第一个
-            if li[j] &gt; li[i]:
-                max_loc = j # 最后出来的max_loc就是有序区中从左往右第一个比li[i]大的值
-        if max_loc != i:
-            for q in range(i-1,max_loc-1,-1):
-                li[q+1] = li[q]
-            li[max_loc], temp = temp, li[max_loc]
-        print(li)
-    return li
-</code></pre>
-<hr>
-<h1 id="进阶排序三人组快速堆">🐥进阶排序三人组（快速/堆）</h1>
-<h2 id="一快速排序">（一）快速排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>
-选一个基准点，左边的全比他小，右边的全比他大。然后对左边右边分别进行递归排序，方法同上。<br>
-🎯[注]此图是version1代码的图<br>
-<img src="https://SerendipitysX.github.io//post-images/1614511049223.gif" alt="" loading="lazy"><br>
-key:</p>
-<ol>
-<li>递归</li>
-<li>注意边界情况（如给定序列本身有序，可能复杂度就变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>了）<br>
-<strong>Version 1</strong> 推荐指数：⭐️⭐️⭐️</li>
-</ol>
-<pre><code>def partition(array, low, high):
-    # 设最后一个数是pivot
-    pivot = array[high]
-    i = low - 1
-    #采取的分区策略是队首放less than pivot（我们叫她less区），具体实操嘛，
-    #就是先设置一个锚点作为less区的起点，一遇到比pivot小的数
-    #就往less区装，即把站着坑位的greater数与less数交换一下。
-    for j in range(low, high):
-        if array[j] &lt;= pivot:
-            i = i + 1
-            (array[i], array[j]) = (array[j], array[i])
 
-    (array[i + 1], array[high]) = (array[high], array[i + 1])
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
 
-    return i + 1
+      
 
-def quickSort(array, low, high):
-    if low &lt; high:
-        # Select pivot position and put all the elements smaller 
-        # than pivot on left and greater than pivot on right
-        pi = partition(array, low, high)
+      
 
-        # Sort the elements on the left of pivot
-        quickSort(array, low, pi - 1)
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
 
-        # Sort the elements on the right of pivot
-        quickSort(array, pi + 1, high)
-</code></pre>
-<p><strong>Version 2</strong> 推荐指数：⭐️⭐️⭐️⭐️</p>
-<pre><code>def partition(li,left,right):
-    tmp = li[left]
-    while left &lt; right:
-        while left&lt;right and li[right]&gt;=tmp: 
-            #必须先从右边开始
-            #因为这里把左边第一个当成 pivot，空了出来
-            #left&lt;right不可少，不然内部就会陷入死循环[-1]
-            right-=1
-        li[right] = li[left]
-        while left&lt;right and li[left]&lt;=tmp:
-            left+=1
-        li[left] = li[right]
-    li[left] = tmp
-    return left
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
 
-def quicksort(li,left,right):
-    if left &lt; right: #还没重合
-        mid = partition(li,left,right)
-        quicksort(left,mid-1)
-        quicksort(mid+1,right)
-</code></pre>
-<p><strong>Version 3</strong> 推荐指数：⭐️⭐️⭐️⭐️⭐️</p>
-<pre><code>def quicksort(li):
-    pivot = len(li) // 2
-    left =[x for x in li if x &lt; privot]
-    mid =[x for x in li if x == privot]
-    right =[x for x in li if x&gt; privot]
-    return quicksort(left) + mid + quicksort(right)
-</code></pre>
-<h2 id="二堆排序">（二）堆排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>
-在介绍堆排序之前，咱们来回顾一下二叉树的基本知识</p>
-<ol>
-<li>完全二叉树：通俗一点，就是从左到右依次排的，不能插队，最后一层可以有空<br>
-<img src="https://SerendipitysX.github.io//post-images/1614513659226.png" alt="" loading="lazy"></li>
-<li>小根/大根：如图所示<br>
-<img src="https://SerendipitysX.github.io//post-images/1614513696728.png" alt="" loading="lazy"><br>
-以大根树为例，我们可以看出来，根节点是整棵树最大的</li>
-</ol>
-<pre><code>def sift(data, low, high):
-    '''
-    目的就是让这棵树的根节点是整棵树最大的。
-    :param data: tree
-    :param low: 堆的最高点（root）
-    :param high: 堆的最后一个，用来判定是否出界
-    :return:
-    '''
-    i = low # i指向根节点
-    j = 2 * i + 1 #子节点，这里是左儿子
-    tmp = data[low]
-    while j &lt;= high:#建立大堆
-        if j+1&lt;high and data[j]&lt;data[j+1]:
-            j = j+1 #比较叶子节点大小
-        if data[j]&gt;tmp:
-            data[i] = data[j]
-            i = j
-            j = 2 * i + 1
-        else:
-            break
-        data[i] = tmp
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li><a href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92">线性回归</a></li>
+<li><a href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D">梯度下降</a>
+<ul>
+<li><a href="#1-batch-gradient-descent">1. Batch Gradient Descent：</a></li>
+<li><a href="#2-stochastic-gradient-descent">2. Stochastic Gradient Descent：</a></li>
+<li><a href="#3-mini-batch-gradient-descent%EF%B8%8F%EF%B8%8F%EF%B8%8F%EF%B8%8F%EF%B8%8F">3. Mini-batch Gradient Descent⭐️⭐️⭐️⭐️⭐️</a></li>
+</ul>
+</li>
+</ul>
 
-def heapSort(data):
-    n = len(data)
-    for i in range(n//2, -1, -1):
-        sift(data,  low=i, high=n-1) #step1:建立max heap(顺序是从最后的树往前，才能保证多层树符合条件) ------就是让每个根节点都是它所在那棵树的老大！！！！！！
-    for i in range(n-1, -1, -1):
-        data[0], data[i] = data[i], data[0] #step2:把根节点(最大)与最后的叶子结点交换-----老大被选出来啦，看下条代码已经不把他算进去啦
-        sift(data, low=0, high=i-1) #再次建立最大树
-</code></pre>
-<p>当然如果我们用Python的内置模块<strong>heapq</strong></p>
-<pre><code>import heapq
-heapq.heapify(data) #建立堆
-n = len(data)
-for i in range(n):
-    print(heapq.heappop(data),end=',')
-</code></pre>
-<p><strong>上一个栗子！</strong><br>
-topK问题，取前k个最大的值</p>
-<ol>
-<li>堆排序后切片 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></li>
-<li>基础排序（每趟选最大） <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(kn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></li>
-<li>切片后堆排序 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>∗</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>k</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n*lg(k))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> 🙂</li>
-</ol>
-<pre><code>def sift(data, low, high):
-    #function:不是建立小根树！而是让根节点是该树最小
-    i = low
-    j = 2*i + 1
-    tmp = data[low]
-    while j &lt;= high:
-        if j+1 &lt;= high and data[j+1] &lt; data[j]:
-            j = j+1
-        if data[j] &lt; tmp:
-            data[i] = data[j]
-            i = j
-            j = 2*i + 1
-        else:
-            break
-        data[i] = tmp
+      </div>
+    </div>
 
-def heapSortk(data, k):
-    heap = data[:k]
-    for i in range((k-2)//2, -1, -1):
-        sift(heap,i,k-1)  #建立节点数量为k的小根树
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
 
-    for i in range(k,len(data)): #保证是前k大的树组成的堆
-        if data[i] &gt; heap[0]:
-            heap[0], data[i] = data[i], heap[0]
-            sift(heap,0,k-1)
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    for i in range(k-1, -1, -1):#保证前k个数有序弹出
-        heap[0], heap[i] = heap[i], heap[0]
-        sift(heap, 0, i-1)
-    print(heap)
-</code></pre>
-<h2 id="三归并排序">（三）归并排序</h2>
-<h1 id="拓展排序">拓展排序</h1>
-<h2 id="一希尔排序插入排序的亲戚">（一）希尔排序（插入排序的亲戚）</h2>
-<h2 id="二桶排序">（二）桶排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span><br>
-计数排序的改进版，就是说这些乱序的数字都落在某个范围里，且这个范围还特别大，比如1-10000。按照计数排序老路子，就要费很多事。于是我们引入桶的概念，把范围划分成几个小范围。并且在将对应数字放进桶的时候，桶的内部就排序啦！</p>
-<pre><code>def bucketsort(li, n=10, max_num=10000):
-    buckets = [[] for _ in range(n)] # 0:0-99 1:100-199
-    for val in li: #798 应该放到7里面
-        i = min(val // (max_num // n),n-1) #i指的是哪个桶 min在这里相当巧妙
-        buckets[i].append(val)
-        #但是我们希望他放进来的时候就有序
-        loc = len(buckets[i]) - 1
-        for j in range(len(buckets[i])-1, -1, -1):
-            if buckets[i][j] &gt; val:
-                loc = j #loc 完成所有循环后是我们该把val存放的位置
-        if loc != len(buckets[i]) -1:
-            for q in range(len(buckets[i])-2, loc-1, -1):
-                buckets[i][q+1] = buckets[i][q]
-            buckets[i][loc] = val
-    sortedli = []
-    for buck in buckets:
-        sortedli.extend(buck)
-    return sortedli
-import random
-li = list(range(10000))
-random.shuffle(li)
-r = bucketsort(li)
-print(r)
-</code></pre>
-<h2 id="三基数排序">（三）基数排序</h2>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span><br>
-类似桶排序，但是个位，十位，百位等等依次进行桶排序。其实说她是桶排序也不太恰当，因为他本身并没有在桶里在进行一个排序，而是通过个十百位的依次排序达到最终的有序。</p>
-<pre><code>def radix_sort(li):
-    max_num = max(li)
-    it = 0
-    while 10**it &lt;=max_num:
-        buckets =[[] for _ in range(10)]
-        for var in li:
-            digit = (var//10**it)%10
-            buckets[digit].append(var)
-        li.clear() #列表清空
-        for buc in buckets:
-            li.extend(buc) #不能用append
-        it += 1
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello World! I'm Ainsley Xiao!]]></title>
-        <id>https://SerendipitysX.github.io/post/hello-world-im-ainsley-xiao/</id>
-        <link href="https://SerendipitysX.github.io/post/hello-world-im-ainsley-xiao/">
-        </link>
-        <updated>2021-02-25T15:37:12.000Z</updated>
-        <content type="html"><![CDATA[<!-- <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,0.5);" 
-    src="C:/Users/DELL/Documents/Gridea/post-images/1614269553980.jpg" width = "90%" alt=""/>
-    <br>
-    <div style="color:orange; border-bottom: 2px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 1px;">
-      cr: K Mitch Hodge
-  	</div>
-</center> -->
-<p>大三下学期伊始，肖四四终于拥有一个自己的博客啦。</p>
-<p>最近乃至停止写小说的这几个月，我越来越感受到自己有些失语，这种感觉就像是用很丰富的食材做了一锅粗茶淡饭。都说行过于言，但不言无以记行。而这一次呢，我想记录在案的<strong>行</strong>就是知识和心情，毕竟我对这个备忘录的定位就是<strong>不说废话的树洞</strong>。</p>
-<p>目前我的搭建方法比较小白，即用typora编辑好文章，用Gridea上传。经过一晚上的实践，发现两个待解决难题：</p>
-<ol>
-<li>MD格式直接从typora移植到Gridea会有一些小问题。Moreover，typora中的markdown格式可以由CSS自定义。</li>
-<li>Gridea上传速度是在影响心情！！！比如我现在写完的这篇文章死活传不上去，临门一脚掉链子可真气人！</li>
-</ol>
-<p>针对第一点，我终于没有任何理由逃避学习前端了(๑＞ڡ＜)☆（<s>轮到我捏娃娃了!</s>）</p>
-<p>把链接贴在下边，这么便捷，你不学学看吗~</p>
-<p><a href="https://www.bilibili.com/video/BV1YJ411a7dy">狂神说CSS3</a>  <a href="https://www.bilibili.com/video/BV1x4411V75C">狂神说HTML</a></p>
-<hr>
-<p>既然已经来到了大三这个节点！想到夏天要到了，本咸鱼确实振奋，决定伸个懒腰顺便翻身晒个太阳o(´^｀)o<br>
-下列任务按从重到轻的顺序排列，学习资源也附上备忘：<br>
-🚀某杯比赛（ACwing的算法基础课 &amp; B站的算法教程）<br>
-✈️大创项目（发现的网站 &amp; 老师给的书）<br>
-🚗托福 3.27 （多给一个月，至少得刷20套TPO）<br>
-🚌深度学习基础 （吴恩达作业 &amp; Sklearn）<br>
-🌵为暑假实习而奋斗</p>
-<p>可能开学后会有新增和结构变更。今后每月25号就是本四四的月度总结。<br>
-不想也不会盲目跟着别人卷，一切都有序滑向我想去的那一方，这就是努力的意义所在。<br>
-这一次咸鱼翻身，我是认真的！💪</p>
-]]></content>
-    </entry>
-</feed>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://SerendipitysX.github.io//media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+</body>
+
+</html>
