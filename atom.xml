@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-03-06T16:33:36.062Z</updated>
+    <updated>2021-03-07T13:52:41.942Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -88,6 +88,10 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
         <content type="html"><![CDATA[<h2 id="手动实现卷积中的滑动窗口操作">手动实现卷积中的滑动窗口操作</h2>
 <p>俗称---<strong>只有卷，没有积</strong>，代表人物---<strong>nn.functional.unfold()</strong><br>
 <a href="https://blog.csdn.net/qq_40714949/article/details/112836897?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=1328603.28013.16150220395239037&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">这篇博客讲的很清楚！</a></p>
+<h2 id="独热码">独热码！</h2>
+<ol>
+<li><a href="https://blog.csdn.net/qq_34914551/article/details/88700334?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">torch.scatter_()</a></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
@@ -102,30 +106,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 在[Leecode：anagram](https://leetcode-cn.com/problems/valid-anagram/solution/yi-xing-dai-ma-xing-neng-gao-xiao-da-dao-100-by-ja/）中也可以快速做出这道题。当然他写的太简单，如果不调API，我们也可以用字典写出来。</p>
 <h2 id="dictgetkeydefaultnone-查找key的值如果没有就返回后面那个">dict.get(key,default=None) 查找key的值，如果没有就返回后面那个</h2>
 <p><a href="https://www.runoob.com/python/att-dictionary-get.html">栗子！</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[处理数据基本操作汇总]]></title>
-        <id>https://SerendipitysX.github.io/post/chu-li-shu-ju-ji-ben-cao-zuo-hui-zong/</id>
-        <link href="https://SerendipitysX.github.io/post/chu-li-shu-ju-ji-ben-cao-zuo-hui-zong/">
-        </link>
-        <updated>2021-03-03T13:40:45.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="csv家族">CSV家族</h1>
-<ol>
-<li><strong>读取csv第一行 标签之类的</strong></li>
-</ol>
-<pre><code>col_list = next(csv.reader(open(wine_path), delimiter=';'))
-</code></pre>
-<ol start="2">
-<li><strong>将csv从第二行起的数据读成numpy</strong></li>
-</ol>
-<pre><code>wineq_numpy = np.loadtxt(wine_path, dtype=np.float32, delimiter=&quot;;&quot;,
-                         skiprows=1)#读取文件的时候跳过第一行
-</code></pre>
-<h1 id="独热码">独热码！</h1>
-<ol>
-<li><a href="https://blog.csdn.net/qq_34914551/article/details/88700334?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">torch.scatter_()</a></li>
-</ol>
 ]]></content>
     </entry>
     <entry>
