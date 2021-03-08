@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-03-08T12:59:53.940Z</updated>
+    <updated>2021-03-08T13:35:20.817Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://SerendipitysX.github.io/images/avatar.png</logo>
     <icon>https://SerendipitysX.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, XSS的备忘录</rights>
+    <entry>
+        <title type="html"><![CDATA[[算法]今天双指针惹我生气了吗]]></title>
+        <id>https://SerendipitysX.github.io/post/suan-fa-jin-tian-shuang-zhi-zhen-re-wo-sheng-qi-liao-ma/</id>
+        <link href="https://SerendipitysX.github.io/post/suan-fa-jin-tian-shuang-zhi-zhen-re-wo-sheng-qi-liao-ma/">
+        </link>
+        <updated>2021-03-08T13:03:25.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[机器学习CS229]线性回归和梯度下降]]></title>
         <id>https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229xian-xing-hui-gui-he-ti-du-xia-jiang/</id>
