@@ -92,8 +92,20 @@ wineq_numpy = ...">
 </code></pre>
 <h1 id="独热码">独热码！</h1>
 <ol>
-<li><a href="https://blog.csdn.net/qq_34914551/article/details/88700334?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">torch.scatter_()</a></li>
+<li><a href="https://blog.csdn.net/qq_34914551/article/details/88700334?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">torch.scatter_()</a><br>
+**WHY？**如果label设成1,2,3,4...很容易造成特征之间的距离不相等，但是独热码使得这些特征之间的距离都相等，规避了问题。</li>
 </ol>
+<h1 id="备忘dim01">备忘：dim=0/1</h1>
+<p>0：纵向<br>
+1：横向（中文一)</p>
+<h1 id="把tensor转成value">把tensor转成value</h1>
+<p><a href="https://pytorch.org/docs/stable/tensors.html?highlight=item#torch.Tensor.item">官方文档说的详细</a></p>
+<ol>
+<li>one element: .item()</li>
+<li>a set of elements: .tolist()</li>
+</ol>
+<h1 id="删除重复的">删除重复的</h1>
+<p>set函数</p>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
@@ -137,6 +149,9 @@ wineq_numpy = ...">
         <ul class="markdownIt-TOC">
 <li><a href="#csv%E5%AE%B6%E6%97%8F">CSV家族</a></li>
 <li><a href="#%E7%8B%AC%E7%83%AD%E7%A0%81">独热码！</a></li>
+<li><a href="#%E5%A4%87%E5%BF%98dim01">备忘：dim=0/1</a></li>
+<li><a href="#%E6%8A%8Atensor%E8%BD%AC%E6%88%90value">把tensor转成value</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E7%9A%84">删除重复的</a></li>
 </ul>
 
       </div>
