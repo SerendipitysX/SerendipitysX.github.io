@@ -30,30 +30,20 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            温故而知新
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%97%A0%E5%81%8F%E4%BC%B0%E8%AE%A1%E6%9C%89%E5%81%8F%E4%BC%B0%E8%AE%A1">无偏估计&amp;有偏估计</a></li>
+<li><a href="#q-q-plot">Q-Q Plot</a></li>
+<li><a href="#%E7%9B%B8%E4%BC%BC%E6%80%A7%E5%92%8C%E7%9B%B8%E5%BC%82%E6%80%A7">相似性和相异性</a></li>
+<li><a href="#%E4%B9%9D%E7%A7%8D%E8%B7%9D%E7%A6%BB%E5%BA%A6%E9%87%8F">九种距离度量</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -97,35 +87,57 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="ri-bookmark-line"></i> Gridea
-        </h2>
-        
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://SerendipitysX.github.io/post/hello-gridea/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://SerendipitysX.github.io//post-images/hello-gridea.png'">
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">数学基础扫盲大宝典</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2021-03-10 / 2 min read
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://SerendipitysX.github.io/post/hello-gridea/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Hello Gridea</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        
+        <div class="post-content yue">
+          <p>今天的费高雷老师没有讲故事了，终于开启讲课啦！本四四非常感动，我贫乏的数学知识简直配不上如此激情昂扬的老师嘛。本四四，一条九年教育漏网之咸鱼决定振奋精神，扫扫盲。也可以留给以后当做字典使用。</p>
+<h2 id="无偏估计有偏估计">无偏估计&amp;有偏估计</h2>
+<p>所有样本出现的<strong>概率一样</strong>。假如有N种样本我们认为所有样本出现概率都是1/N。然后根据这个来计算数学期望。此时的<strong>数学期望=平均值</strong>。<br>
+不废话了。👉<a href="https://spaces.ac.cn/archives/6747#mjx-eqn-eq%3Awupianfangcha">这篇写得太好了。</a></p>
+<h2 id="q-q-plot">Q-Q Plot</h2>
+<p>唔，目前有两种：</p>
+<ol>
+<li>两个同等实体的数据列出来，如果她俩一模一样，那就是45度的线走到黑，反之，可以从上下看出两者差别。</li>
+<li>一个axis是数据，一个axis是正态分布。如果是一条较直的线，那我们就可以认为数据是normal的。具体步骤和详解可见：👉<a href="https://blog.csdn.net/weixin_43055882/article/details/102527268?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-5&amp;spm=1001.2101.3001.4242">这个链接</a></li>
+</ol>
+<h2 id="相似性和相异性">相似性和相异性</h2>
+<blockquote>
+<p>相似性+相异性=1<br>
+https://www.imooc.com/article/details/id/29583<br>
+https://blog.csdn.net/u010451580/article/details/53163634<br>
+https://blog.csdn.net/qq_40281497/article/details/81839120<br>
+留坑</p>
+</blockquote>
+<h2 id="九种距离度量">九种距离度量</h2>
+<p>说来愧疚，邓老师分享在群里的文章，我可是一篇没打开过......<br>
+报应来了，现在补上吧，万一考研要用呢，sigh...<br>
+<img src="https://huaban.com/pins/3803245976/" alt="" loading="lazy"></p>
 
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-12-12 / 2 min read</div>
-    </div>
-  </section>
+        </div>
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229-luo-ji-hui-gui/">
+                <h3 class="post-title">
+                  [机器学习]逻辑回归
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
 
       </div>
     </div>

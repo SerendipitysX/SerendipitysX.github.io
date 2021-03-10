@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://SerendipitysX.github.io/</id>
     <title>XSS的备忘录</title>
-    <updated>2021-03-09T07:43:19.264Z</updated>
+    <updated>2021-03-10T15:54:18.138Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://SerendipitysX.github.io/"/>
     <link rel="self" href="https://SerendipitysX.github.io/atom.xml"/>
@@ -10,6 +10,36 @@
     <logo>https://SerendipitysX.github.io/images/avatar.png</logo>
     <icon>https://SerendipitysX.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, XSS的备忘录</rights>
+    <entry>
+        <title type="html"><![CDATA[数学基础扫盲大宝典]]></title>
+        <id>https://SerendipitysX.github.io/post/shu-xue-ji-chu-sao-mang-da-bao-dian/</id>
+        <link href="https://SerendipitysX.github.io/post/shu-xue-ji-chu-sao-mang-da-bao-dian/">
+        </link>
+        <updated>2021-03-10T12:07:04.000Z</updated>
+        <content type="html"><![CDATA[<p>今天的费高雷老师没有讲故事了，终于开启讲课啦！本四四非常感动，我贫乏的数学知识简直配不上如此激情昂扬的老师嘛。本四四，一条九年教育漏网之咸鱼决定振奋精神，扫扫盲。也可以留给以后当做字典使用。</p>
+<h2 id="无偏估计有偏估计">无偏估计&amp;有偏估计</h2>
+<p>所有样本出现的<strong>概率一样</strong>。假如有N种样本我们认为所有样本出现概率都是1/N。然后根据这个来计算数学期望。此时的<strong>数学期望=平均值</strong>。<br>
+不废话了。👉<a href="https://spaces.ac.cn/archives/6747#mjx-eqn-eq%3Awupianfangcha">这篇写得太好了。</a></p>
+<h2 id="q-q-plot">Q-Q Plot</h2>
+<p>唔，目前有两种：</p>
+<ol>
+<li>两个同等实体的数据列出来，如果她俩一模一样，那就是45度的线走到黑，反之，可以从上下看出两者差别。</li>
+<li>一个axis是数据，一个axis是正态分布。如果是一条较直的线，那我们就可以认为数据是normal的。具体步骤和详解可见：👉<a href="https://blog.csdn.net/weixin_43055882/article/details/102527268?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-5&amp;spm=1001.2101.3001.4242">这个链接</a></li>
+</ol>
+<h2 id="相似性和相异性">相似性和相异性</h2>
+<blockquote>
+<p>相似性+相异性=1<br>
+https://www.imooc.com/article/details/id/29583<br>
+https://blog.csdn.net/u010451580/article/details/53163634<br>
+https://blog.csdn.net/qq_40281497/article/details/81839120<br>
+留坑</p>
+</blockquote>
+<h2 id="九种距离度量">九种距离度量</h2>
+<p>说来愧疚，邓老师分享在群里的文章，我可是一篇没打开过......<br>
+报应来了，现在补上吧，万一考研要用呢，sigh...<br>
+<img src="https://huaban.com/pins/3803245976/" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[机器学习]逻辑回归]]></title>
         <id>https://SerendipitysX.github.io/post/ji-qi-xue-xi-cs229-luo-ji-hui-gui/</id>
@@ -163,7 +193,7 @@ c-16-25.333-24-45-24-59z'/></svg></span></span></span></span><span class="vlist-
 <img src="https://hbimg.huabanimg.com/09496e7b802dccbc2355c1bfeb0365cb4a0bbffb3c28b-l9cD9e_fw658/format/webp" alt="" loading="lazy"></p>
 <h2 id="lambda咋取值"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>咋取值？</h2>
 <h3 id="方法一岭迹法">（方法一）岭迹法</h3>
-<p>在平面直角坐标系中的w − $ \lambda<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">曲</mi><mi mathvariant="normal">线</mi><mi mathvariant="normal">称</mi><mi mathvariant="normal">为</mi><mi mathvariant="normal">‘</mi><mi mathvariant="normal">岭</mi><mi mathvariant="normal">迹</mi><mi mathvariant="normal">曲</mi><mi mathvariant="normal">线</mi><mi mathvariant="normal">‘</mi><mi mathvariant="normal">。</mi><mi mathvariant="normal">当</mi></mrow><annotation encoding="application/x-tex">曲线称为`岭迹曲线`。当</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord cjk_fallback">曲</span><span class="mord cjk_fallback">线</span><span class="mord cjk_fallback">称</span><span class="mord cjk_fallback">为</span><span class="mord">‘</span><span class="mord cjk_fallback">岭</span><span class="mord cjk_fallback">迹</span><span class="mord cjk_fallback">曲</span><span class="mord cjk_fallback">线</span><span class="mord">‘</span><span class="mord cjk_fallback">。</span><span class="mord cjk_fallback">当</span></span></span></span>w<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">趋</mi><mi mathvariant="normal">于</mi><mi mathvariant="normal">稳</mi><mi mathvariant="normal">定</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">点</mi><mi mathvariant="normal">就</mi><mi mathvariant="normal">是</mi><mi mathvariant="normal">所</mi><mi mathvariant="normal">要</mi><mi mathvariant="normal">寻</mi><mi mathvariant="normal">找</mi><mi mathvariant="normal">的</mi></mrow><annotation encoding="application/x-tex">趋于稳定的点就是所要寻找的</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">趋</span><span class="mord cjk_fallback">于</span><span class="mord cjk_fallback">稳</span><span class="mord cjk_fallback">定</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">点</span><span class="mord cjk_fallback">就</span><span class="mord cjk_fallback">是</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">寻</span><span class="mord cjk_fallback">找</span><span class="mord cjk_fallback">的</span></span></span></span> \lambda$值。</p>
+<p>在平面直角坐标系中的w − <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>曲线称为岭迹曲线。当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span>趋于稳定的点就是所要寻找的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>值。</p>
 <h3 id="方法二交叉验证法">（方法二）交叉验证法</h3>
 <blockquote>
 <p><code>RidgeCV(alphas=(0.1, 1.0, 10.0), fit_intercept=True, normalize=False, scoring=None, cv=None, gcv_mode=None, store_cv_values=False)</code><br>
